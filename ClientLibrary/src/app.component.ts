@@ -1,12 +1,19 @@
 import { LitElement, html } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { customElement, property } from 'lit/decorators.js';
 
 @customElement('app-root')
 export class AppComponent extends LitElement {
+  @property()
+  public appTitle = 'App';
+
   public render() {
     return html`
-      <h1><slot></slot></h1>
-      <slot name="content"></slot>
+      <app-split-layout>
+        <app-container slot="side">
+          <h1>${this.appTitle}</h1>
+        </app-container>
+        <div slot="content"></div>
+      </app-split-layout>
     `;
   }
 }

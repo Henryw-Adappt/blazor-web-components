@@ -1,9 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --color-text: white;
   --color-background: black;
+  --color-border: #a0a0a0;
+
+  --border: 1px solid var(--color-border);
+
+  --pad: 16px;
+  --pad-large: 32px;
+  --pad-small: 8px;
+
+  --gap: 16px;
+  --gap-large: 32px;
+  --gap-small: 8px;
+}
+
+html {
+  height: 100%;
 }
 
 body {
+  height: 100%;
   margin: 0;
   color: var(--color-text);
   background: var(--color-background);

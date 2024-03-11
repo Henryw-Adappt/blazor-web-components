@@ -1,2 +1,3 @@
 import '../global.css';
-import * from './split-layout.component';
+export * from './split-layout.component';
+export * from './container.component';

@@ -12,7 +12,9 @@ export class AppComponent extends LitElement {
         <app-container slot="side">
           <h1>${this.appTitle}</h1>
         </app-container>
-        <div slot="content"></div>
+        <app-json-display
+          slot="content"
+          .obj=${{ name: 'joe' }}></app-json-display>
       </app-split-layout>
     `;
   }

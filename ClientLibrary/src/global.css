@@ -1,0 +1,13 @@
+:root {
+  --color-text: white;
+  --color-background: black;
+}
+
+body {
+  margin: 0;
+  color: var(--color-text);
+  background: var(--color-background);
+
+  font-family: 'Roboto Mono', monospace;
+  font-optical-sizing: auto;
+}

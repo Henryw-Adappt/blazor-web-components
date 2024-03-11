@@ -1,1 +1,1 @@
-export * from './my-element';
+import '../global.css'

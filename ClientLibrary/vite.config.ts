@@ -1,9 +1,8 @@
 import { defineConfig } from 'vite';
-import dts from 'vite-plugin-dts';
 
 export default defineConfig({
     root: 'src',
-    plugins: [dts()],
+    assetsInclude: ['assets/**/*'],
     build: {
         lib: {
             entry: 'lib/public-api.ts',
@@ -12,7 +11,7 @@ export default defineConfig({
                 if (format === 'umd') return 'client-library.js';
                 else return 'cl.js';
             },
-            formats: ['umd']
+            formats: ['umd'],
 
         },
         outDir: '../wwwroot'

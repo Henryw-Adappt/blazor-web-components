@@ -1,7 +1,21 @@
-﻿@page "/"
+@using System.Text.Json;
+
+@page "/"
 
 <PageTitle>Index</PageTitle>
 
-<my-element>
-    <h1>Vite + Lit</h1>
-</my-element>
+<app-json-display obj="@_data.Serialize()"></app-json-display>
+
+@code {
+    public class Data
+    {
+        public string Name { get; set; } = "Joe";
+
+        public string Serialize()
+        {
+            return JsonSerializer.Serialize(this);
+        }
+    }
+
+    private Data _data = new();
+}

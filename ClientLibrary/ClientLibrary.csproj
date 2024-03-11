@@ -6,6 +6,13 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="public\**" />
+    <Content Remove="public\**" />
+    <EmbeddedResource Remove="public\**" />
+    <None Remove="public\**" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <SupportedPlatform Include="browser" />
@@ -16,7 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="public\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 

@@ -1,5 +1,3 @@
-@using System.Text.Json;
-
 @page "/"
 
 <PageTitle>Index</PageTitle>
@@ -8,19 +6,9 @@
     <app-container slot="side">
         <h1>Blazor x Lit</h1>
     </app-container>
-    <app-json-display slot="content" obj="@_data.Serialize()"></app-json-display>
+    <app-json-display slot="content" obj="@_state.Serialize()"></app-json-display>
 </app-split-layout>
 
 @code {
-    public class Data
-    {
-        public string Name { get; set; } = "Joe";
-
-        public string Serialize()
-        {
-            return JsonSerializer.Serialize(this);
-        }
-    }
-
-    private Data _data = new();
+    private AppState _state = new();
 }

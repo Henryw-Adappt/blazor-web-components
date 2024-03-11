@@ -4,7 +4,12 @@
 
 <PageTitle>Index</PageTitle>
 
-<app-json-display obj="@_data.Serialize()"></app-json-display>
+<app-split-layout>
+    <app-container slot="side">
+        <h1>Blazor x Lit</h1>
+    </app-container>
+    <app-json-display slot="content" obj="@_data.Serialize()"></app-json-display>
+</app-split-layout>
 
 @code {
     public class Data

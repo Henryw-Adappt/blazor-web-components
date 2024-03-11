@@ -1,7 +1,6 @@
 import { LitElement, css, html } from 'lit'
 import { customElement, property } from 'lit/decorators.js'
-import litLogo from './assets/lit.svg'
-import viteLogo from '/vite.svg'
+import litLogo from '../assets/lit.svg'
 
 /**
  * An example element.
@@ -26,9 +25,6 @@ export class MyElement extends LitElement {
   render() {
     return html`
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src=${viteLogo} class="logo" alt="Vite logo" />
-        </a>
         <a href="https://lit.dev" target="_blank">
           <img src=${litLogo} class="logo lit" alt="Lit logo" />
         </a>

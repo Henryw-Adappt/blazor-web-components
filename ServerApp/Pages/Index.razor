@@ -6,9 +6,9 @@
     <app-container slot="side">
         <h1>Blazor x Lit</h1>
     </app-container>
-    <app-json-display slot="content" obj="@_state.Serialize()"></app-json-display>
+    <app-json-display slot="content" state="@_state.Serialize()"></app-json-display>
 </app-split-layout>
 
 @code {
-    private AppState _state = new();
+    private AppState _state = new() { AppName = "Blazor x Lit" };
 }

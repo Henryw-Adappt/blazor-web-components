@@ -11,7 +11,9 @@ Blazor the same as native elements.
 CommonLibrary is an (ASP) C# library with common class declarations (Data) and event handlers/args (Events). It uses NSwag to
 convert its class declarations into a TypeScript client with types and classes. This client is imported into the ClientLibrary.
 
+Before building, run `npm i` in ClientLibrary to install its dependencies.
+
 To build:
-- Build and run CommonLibrary. It must be executed to generate the required TypeScript file.
-- Build ClientLibrary. It builds its JS files as part of the MSBuild process.
-- Build ServerApp.
+1. Build and run CommonLibrary. It must be executed to generate the required TypeScript file.
+2. Build ClientLibrary. It builds its JS files as part of the MSBuild process.
+3. Build ServerApp.

@@ -5,13 +5,17 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build --emptyOutDir",
+    "build:tsc": "tsc",
+    "build:client": "vite build --emptyOutDir",
+    "build:server": "vite build --config vite.server.config.ts",
+    "build": "npm run build:tsc && npm run build:client && npm run build:server",
     "preview": "vite preview"
   },
   "dependencies": {
     "lit": "^3.1.2"
   },
   "devDependencies": {
+    "@types/node": "^20.11.26",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
     "eslint": "^8.57.0",

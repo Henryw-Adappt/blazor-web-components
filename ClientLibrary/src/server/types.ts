@@ -1,1 +1,1 @@
-export * from "../../../CommonLibrary/wwwroot/types";
+export * from '../../../CommonLibrary/wwwroot/types';

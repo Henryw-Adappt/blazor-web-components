@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { AppState, IAppState } from "../server/types";
+import { AppState, IAppState, IAppStateEventArgs } from '../server/types';
 
 @customElement('app-json-display')
 export class JSONDisplayComponent extends LitElement {
@@ -14,8 +14,23 @@ export class JSONDisplayComponent extends LitElement {
   private _state!: AppState;
 
   public render() {
-    console.log(this._state);
-    return html`<p>${this._state.appName}</p>`;
+    return html`
+      <p>${this._state.appName}</p>
+      <button @click=${this._setStateName}>Click me!</button>
+    `;
+  }
+
+  private async _setStateName() {
+    this._state.appName = 'bert';
+    this.requestUpdate();
+    await this.updateComplete;
+    this.dispatchEvent(
+      new CustomEvent<IAppStateEventArgs>('state', {
+        bubbles: true,
+        composed: true,
+        detail: { state: this._state },
+      })
+    );
   }
 }
 

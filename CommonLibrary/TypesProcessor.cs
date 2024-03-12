@@ -9,7 +9,7 @@ public class TypesProcessor : IDocumentProcessor
     {
         var assembly = this.GetType().Assembly;
         var types = assembly.ExportedTypes
-            .Where(t => t.FullName.StartsWith("CommonLibrary.Data.") && t.IsClass);
+            .Where(t => (t.FullName.StartsWith("CommonLibrary.Data.") || t.FullName.StartsWith("CommonLibrary.Events.")) && t.IsClass);
 
         foreach (var type in types)
         {
